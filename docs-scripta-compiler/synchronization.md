@@ -8,6 +8,7 @@ clicks on a piece of rendered
 text, the message `SendLineNumber lineNumber` is sent using
 
 ```text
+-- Render.Utility
 sendLineNumberOnClick : Int -> Element.Attribute MarkupMsg
 sendLineNumberOnClick lineNumber =
     Events.onClick (SendLineNumber (String.fromInt lineNumber))
@@ -16,7 +17,7 @@ sendLineNumberOnClick lineNumber =
 
 When the message is handled by the host app and editor, the
 corresponding source text is scrolled into view and highlighted.
-(NOTE: still quite innacurate).  In both Scripta.io and Scripta Desktop,
+(NOTE: highlights first line of block).  In both Scripta.io and Scripta Desktop,
 the message is passed on to the Codemirror editor, whihc does the
 scrolling and highlighting.
 
